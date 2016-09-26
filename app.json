@@ -1,0 +1,5 @@
+{
+  "name" : "gitAccessApi",
+  "description": "accessing data from git repositories",
+  "repository": "https://github.com/sacdhdh22/gitAccessApi.git"
+}

@@ -20,8 +20,8 @@ app.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-
-app.listen(3000);
+var port = Number(process.env.PORT || 3000);
+app.listen(port);
 module.exports = app;
 
 
