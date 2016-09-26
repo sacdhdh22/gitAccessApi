@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title> GitApi AccessIssues</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/usersController.js"></script>
+<link href="/bower_components/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body ng-app="myApp" ng-controller="gitController">
+<div style="padding-left: 29em">
+<div class="row">
+<div class="input-field col s6"></div></div>
+<div class="row" >
+<div class="input-field col s6">
+<input  id="first_name" type="text" class="validate", ng-model = "fullname" , placeholder="Enter Url........">
+<p style= "color:red;">{{error}}</p>
+</div>
+</div>
+<div class="row">
+<div class="input-field col s5">
+
+<a class="waves-effect waves-light btn" ng-click = "register()"><i class="material-icons left">Click</i></a>
+</div>
+</div>
+<div class="row">
+<div class="input-field col s12">
+    <div class="card-panel red lighten-2">Issues</div>
+<table>
+<thead>
+<tr>
+    <th data-field="id">Total</th>
+    <th data-field="name">Past 24Hour </th>
+    <th data-field="price">Past 24Hour-Past7 days</th>
+    <th data-field="price">Past 7 days</th>
+</tr>
+</thead><tbody>
+<tr>
+    <td>{{issues.all}}</td>
+    <td>{{issues.pastDay}}</td>
+    <td>{{issues.pastWeek}}</td>
+    <td>{{issues.pastAll}}</td>
+</tr>
+</tbody>
+</table></div></div></div></body>
+</html>

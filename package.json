@@ -1,0 +1,16 @@
+{
+  "name": "gitAccess",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "github": "^3.1.0",
+    "moment": "^2.15.1",
+    "parse-github-url": "^0.3.2"
+  }
+}
