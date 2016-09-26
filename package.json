@@ -11,9 +11,10 @@
     "express": "^4.14.0",
     "github": "^3.1.0",
     "moment": "^2.15.1",
-    "parse-github-url": "^0.3.2"
+    "parse-github-url": "^0.3.2",
+    "underscore-node": "^0.1.2"
   },
-  "engines" :{
-    "node" : "0.12.7"
+  "engines": {
+    "node": "0.12.7"
   }
 }
