@@ -20,7 +20,9 @@ app.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-var port = Number(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 app.listen(port);
 module.exports = app;
 
