@@ -2,26 +2,26 @@
  * Created by sachinPc on 9/26/2016.
  */
 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['angularSpinner']);
 
-app.controller('gitController', function($scope, $http,$window){
+app.controller('gitController', function($scope, $http, usSpinnerService){
     $scope.error= " ";
     $scope.register=function(){
-        console.log($scope.fullname);
-     if(!$scope.fullname){
-         $scope.error = "Please eneter a valid Url"
+        usSpinnerService.spin('spinner-1'); // Just added a spinner while the data is being loaded
+     if(!$scope.url){
+         $scope.error = "Please eneter  a valid Url"
      }
-     $http.post('/click/', {url : $scope.fullname}).then(function(issue){
+     $http.post('/gitAccess/', {url : $scope.url}).then(function(issue){
+         usSpinnerService.stop('spinner-1');
          $scope.error =" ";
          var gitIssues = issue.data.total;
-         if(!gitIssues) {
-             $scope.error = "No Issues";
+         if(JSON.stringify(gitIssues)=="{}") {
+             $scope.error = "No Issues Found Please Check the URL and try again...!";
          }
          $scope.issues = issue.data.total;
-
-         console.log(data);
      },function(response){
-         $scope.error = "No Issues";
+         usSpinnerService.stop('spinner-1');
+         $scope.error = "No Issues Found Please Check the URL and try again...!";
      });
 
     };

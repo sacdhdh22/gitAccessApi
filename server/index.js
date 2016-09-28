@@ -8,7 +8,7 @@ var router = express.Router();
 var Promise = require('bluebird');
 var _ = require('underscore-node');
 
-router.post('/click', function(req, res){
+router.post('/gitAccess', function(req, res){
     var url = gh(req.body.url);
     var userName = url.owner;
     var repo = url.name;
@@ -49,6 +49,7 @@ function getPastDayIssues(issues, pastDate, pastWeek) {
         _.forEach(issues, function(data){
             var createdDate = new Date(data.created_at);
             var createdAt = moment(createdDate).format("MM-DD-YYYY HH:mm:ss");
+
         //Comparing the dates using Moment and adding it to an object
             if(moment(createdAt).isAfter(pastDate)){
                 i = i+1;

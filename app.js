@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
-
+app.use('/', routes);
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
